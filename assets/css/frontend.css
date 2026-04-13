@@ -13,11 +13,9 @@
 .boligkalkulator-wrapper h4,
 .boligkalkulator-wrapper h5,
 .boligkalkulator-wrapper h6 {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
     letter-spacing: normal !important;
     text-transform: none !important;
+    border: none !important;
 }
 
 .boligkalkulator-wrapper p {
@@ -538,7 +536,7 @@ select.boligkalkulator-input {
 .boligkalkulator-comparison-section {
     background: white !important;
     padding: 0 !important;
-    margin: 0 !important;
+    margin: 30px 0 !important;
     min-height: 100% !important;
     display: flex !important;
     flex-direction: column !important;
@@ -703,8 +701,6 @@ select.boligkalkulator-input {
     line-height: 1.3 !important;
     letter-spacing: normal !important;
     text-transform: none !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
 }
 
 .boligkalkulator-your-share h4 {
