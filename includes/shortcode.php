@@ -33,6 +33,9 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
     $children_count_help  = isset( $settings['children_count_help'] ) ? $settings['children_count_help'] : '';
     $cars_count_help      = isset( $settings['cars_count_help'] ) ? $settings['cars_count_help'] : '';
 
+    // Info box text
+    $two_applicants_text  = isset( $settings['two_applicants_text'] ) ? $settings['two_applicants_text'] : 'Hvis dere er to søkere, kan dere summere opp tallene i hvert felt.';
+
     // Tab 2 Help texts
     $ownership_form_help  = isset( $settings['ownership_form_help'] ) ? $settings['ownership_form_help'] : '';
     $total_price_help     = isset( $settings['total_price_help'] ) ? $settings['total_price_help'] : '';
@@ -124,8 +127,8 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
 
                         <div class="boligkalkulator-input-row">
                             <div class="boligkalkulator-info-box">
-                                <span class="boligkalkulator-info-icon">ℹ</span>
-                                <span class="boligkalkulator-info-text"><?php esc_html_e( 'Hvis dere er to søkere, kan dere summere opp tallene i hvert felt.', 'boligkalkulator' ); ?></span>
+                                <span class="boligkalkulator-info-icon">i</span>
+                                <span class="boligkalkulator-info-text"><?php echo esc_html( $two_applicants_text ); ?></span>
                             </div>
                         </div>
 

@@ -159,6 +159,7 @@ class Boligkalkulator {
             'total_price_help'           => isset( $settings['total_price_help'] ) ? sanitize_textarea_field( $settings['total_price_help'] ) : '',
             'your_share_help'            => isset( $settings['your_share_help'] ) ? sanitize_textarea_field( $settings['your_share_help'] ) : '',
             'financing_help'             => isset( $settings['financing_help'] ) ? sanitize_textarea_field( $settings['financing_help'] ) : '',
+            'two_applicants_text'        => isset( $settings['two_applicants_text'] ) ? sanitize_textarea_field( $settings['two_applicants_text'] ) : 'Hvis dere er to søkere, kan dere summere opp tallene i hvert felt.',
             'oslobolig_rent_help'        => isset( $settings['oslobolig_rent_help'] ) ? sanitize_textarea_field( $settings['oslobolig_rent_help'] ) : '',
             'common_costs_help'          => isset( $settings['common_costs_help'] ) ? sanitize_textarea_field( $settings['common_costs_help'] ) : '',
             'capital_cost_help'          => isset( $settings['capital_cost_help'] ) ? sanitize_textarea_field( $settings['capital_cost_help'] ) : '',

@@ -315,6 +315,14 @@ function boligkalkulator_render_settings_page() {
                         </div>
 
                         <div class="boligkalkulator-form-group">
+                            <label for="two_applicants_text"><?php esc_html_e( 'Infoboks - to søkere (Tab 1)', 'boligkalkulator' ); ?></label>
+                            <textarea id="two_applicants_text" 
+                                      name="boligkalkulator_settings[two_applicants_text]" 
+                                      rows="2" 
+                                      placeholder="<?php esc_attr_e( 'Teksten i infoboksen om to søkere', 'boligkalkulator' ); ?>"><?php echo esc_textarea( isset( $settings['two_applicants_text'] ) ? $settings['two_applicants_text'] : 'Hvis dere er to søkere, kan dere summere opp tallene i hvert felt.' ); ?></textarea>
+                        </div>
+
+                        <div class="boligkalkulator-form-group">
                             <label for="ownership_form_help"><?php esc_html_e( 'Eierform - hjelpetekst', 'boligkalkulator' ); ?></label>
                             <textarea id="ownership_form_help" 
                                       name="boligkalkulator_settings[ownership_form_help]" 
