@@ -316,15 +316,15 @@
 }
 
 .boligkalkulator-input[type="range"] {
-    padding: 0;
-    border: none;
-    height: 4px;
-    border-radius: 5px;
-    background: linear-gradient(to right, #9e72fd, #ff7a00);
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
+    padding: 0 !important;
+    border: none !important;
+    height: 4px !important;
+    border-radius: 5px !important;
+    background: linear-gradient(to right, #9e72fd, #ff7a00) !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    cursor: pointer !important;
 }
 
 .boligkalkulator-input[type="range"]::-moz-range-track {
