@@ -315,7 +315,7 @@ function boligkalkulator_render_settings_page() {
                         </div>
 
                         <div class="boligkalkulator-form-group">
-                            <label for="two_applicants_text"><?php esc_html_e( 'Infoboks - to søkere (Tab 1)', 'boligkalkulator' ); ?></label>
+                            <label for="two_applicants_text"><?php esc_html_e( 'Infoboks (Tab 1)', 'boligkalkulator' ); ?></label>
                             <textarea id="two_applicants_text" 
                                       name="boligkalkulator_settings[two_applicants_text]" 
                                       rows="2" 
