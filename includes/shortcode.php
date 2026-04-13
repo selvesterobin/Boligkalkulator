@@ -33,6 +33,12 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
     $children_count_help  = isset( $settings['children_count_help'] ) ? $settings['children_count_help'] : '';
     $cars_count_help      = isset( $settings['cars_count_help'] ) ? $settings['cars_count_help'] : '';
 
+    // Tab 2 Help texts
+    $ownership_form_help  = isset( $settings['ownership_form_help'] ) ? $settings['ownership_form_help'] : '';
+    $total_price_help     = isset( $settings['total_price_help'] ) ? $settings['total_price_help'] : '';
+    $your_share_help      = isset( $settings['your_share_help'] ) ? $settings['your_share_help'] : '';
+    $financing_help       = isset( $settings['financing_help'] ) ? $settings['financing_help'] : '';
+
     ob_start();
     ?>
     <div id="<?php echo esc_attr( $tab_id ); ?>" class="boligkalkulator-wrapper">
@@ -199,7 +205,10 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
 
                         <div class="boligkalkulator-input-row">
                             <div class="boligkalkulator-input-group">
-                                <label class="boligkalkulator-label"><?php esc_html_e( 'Eierform', 'boligkalkulator' ); ?></label>
+                                <label class="boligkalkulator-label">
+                                    <?php esc_html_e( 'Eierform', 'boligkalkulator' ); ?>
+                                    <span class="boligkalkulator-help-icon" data-help="ownership_form_help" data-content="<?php echo esc_attr( $ownership_form_help ); ?>">?</span>
+                                </label>
                                 <select class="boligkalkulator-input boligkalkulator-ownership-form">
                                     <option value="borettslag"><?php esc_html_e( 'Borettslag', 'boligkalkulator' ); ?></option>
                                     <option value="selveier"><?php esc_html_e( 'Selveier', 'boligkalkulator' ); ?></option>
@@ -223,7 +232,10 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
 
                         <div class="boligkalkulator-input-row">
                             <div class="boligkalkulator-input-group">
-                                <label class="boligkalkulator-label"><?php esc_html_e( 'Kjøpesum - totalpris', 'boligkalkulator' ); ?></label>
+                                <label class="boligkalkulator-label">
+                                    <?php esc_html_e( 'Kjøpesum - totalpris', 'boligkalkulator' ); ?>
+                                    <span class="boligkalkulator-help-icon" data-help="total_price_help" data-content="<?php echo esc_attr( $total_price_help ); ?>">?</span>
+                                </label>
                                 <div class="boligkalkulator-input-wrapper">
                                     <input
                                         type="number"
@@ -251,7 +263,10 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                         </div>
 
                         <div class="boligkalkulator-your-share boligkalkulator-highlight-section">
-                            <h4><?php esc_html_e( 'Din eierandel', 'boligkalkulator' ); ?></h4>
+                            <h4>
+                                <?php esc_html_e( 'Din eierandel', 'boligkalkulator' ); ?>
+                                <span class="boligkalkulator-help-icon" data-help="your_share_help" data-content="<?php echo esc_attr( $your_share_help ); ?>">?</span>
+                            </h4>
                             <div class="boligkalkulator-financing-breakdown">
                                 <div class="boligkalkulator-financing-row boligkalkulator-highlight-row">
                                     <span class="boligkalkulator-financing-label"><?php esc_html_e( 'Kjøpesum - din eierandel', 'boligkalkulator' ); ?></span>
@@ -272,7 +287,10 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                         </div>
 
                         <div class="boligkalkulator-your-financing">
-                            <h4><?php esc_html_e( 'Ditt innskudd finansieres med', 'boligkalkulator' ); ?></h4>
+                            <h4>
+                                <?php esc_html_e( 'Ditt innskudd finansieres med', 'boligkalkulator' ); ?>
+                                <span class="boligkalkulator-help-icon" data-help="financing_help" data-content="<?php echo esc_attr( $financing_help ); ?>">?</span>
+                            </h4>
                             <div class="boligkalkulator-financing-breakdown">
                                 <div class="boligkalkulator-financing-row">
                                     <span class="boligkalkulator-financing-label"><?php esc_html_e( 'Dine sparepenger', 'boligkalkulator' ); ?></span>

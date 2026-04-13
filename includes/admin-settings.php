@@ -315,6 +315,38 @@ function boligkalkulator_render_settings_page() {
                         </div>
 
                         <div class="boligkalkulator-form-group">
+                            <label for="ownership_form_help"><?php esc_html_e( 'Eierform - hjelpetekst', 'boligkalkulator' ); ?></label>
+                            <textarea id="ownership_form_help" 
+                                      name="boligkalkulator_settings[ownership_form_help]" 
+                                      rows="2" 
+                                      placeholder="<?php esc_attr_e( 'Hjelpetekst som vises ved hover på ? ikonet', 'boligkalkulator' ); ?>"><?php echo esc_textarea( isset( $settings['ownership_form_help'] ) ? $settings['ownership_form_help'] : '' ); ?></textarea>
+                        </div>
+
+                        <div class="boligkalkulator-form-group">
+                            <label for="total_price_help"><?php esc_html_e( 'Kjøpesum - hjelpetekst', 'boligkalkulator' ); ?></label>
+                            <textarea id="total_price_help" 
+                                      name="boligkalkulator_settings[total_price_help]" 
+                                      rows="2" 
+                                      placeholder="<?php esc_attr_e( 'Hjelpetekst som vises ved hover på ? ikonet', 'boligkalkulator' ); ?>"><?php echo esc_textarea( isset( $settings['total_price_help'] ) ? $settings['total_price_help'] : '' ); ?></textarea>
+                        </div>
+
+                        <div class="boligkalkulator-form-group">
+                            <label for="your_share_help"><?php esc_html_e( 'Din eierandel - hjelpetekst', 'boligkalkulator' ); ?></label>
+                            <textarea id="your_share_help" 
+                                      name="boligkalkulator_settings[your_share_help]" 
+                                      rows="2" 
+                                      placeholder="<?php esc_attr_e( 'Hjelpetekst som vises ved hover på ? ikonet', 'boligkalkulator' ); ?>"><?php echo esc_textarea( isset( $settings['your_share_help'] ) ? $settings['your_share_help'] : '' ); ?></textarea>
+                        </div>
+
+                        <div class="boligkalkulator-form-group">
+                            <label for="financing_help"><?php esc_html_e( 'Ditt innskudd finansieres med - hjelpetekst', 'boligkalkulator' ); ?></label>
+                            <textarea id="financing_help" 
+                                      name="boligkalkulator_settings[financing_help]" 
+                                      rows="2" 
+                                      placeholder="<?php esc_attr_e( 'Hjelpetekst som vises ved hover på ? ikonet', 'boligkalkulator' ); ?>"><?php echo esc_textarea( isset( $settings['financing_help'] ) ? $settings['financing_help'] : '' ); ?></textarea>
+                        </div>
+
+                        <div class="boligkalkulator-form-group">
                             <label for="oslobolig_rent_help"><?php esc_html_e( 'OsloBolig leieprosent - hjelpetekst', 'boligkalkulator' ); ?></label>
                             <textarea id="oslobolig_rent_help" 
                                       name="boligkalkulator_settings[oslobolig_rent_help]" 
