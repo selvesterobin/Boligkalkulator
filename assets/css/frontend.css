@@ -793,24 +793,30 @@ select.boligkalkulator-input {
 }
 
 .boligkalkulator-help-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #9e72fd;
-    color: white;
-    font-size: 10px;
-    font-weight: bold;
-    cursor: help;
-    position: relative;
-    flex-shrink: 0;
-    margin-left: 6px;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50% !important;
+    background: #9e72fd !important;
+    color: white !important;
+    font-size: 10px !important;
+    font-weight: bold !important;
+    cursor: help !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+    margin-left: 6px !important;
+    padding: 0 !important;
+    border: none !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
 }
 
 .boligkalkulator-help-icon:hover {
-    background: #8a5fdd;
+    background: #8a5fdd !important;
+    color: white !important;
 }
 
 .boligkalkulator-help-icon .boligkalkulator-tooltip {
