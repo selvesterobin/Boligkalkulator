@@ -58,7 +58,7 @@
 .boligkalkulator-header h2 {
     font-family: Chivo, Chivo !important;
     font-size: 72px !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
     margin-bottom: 10px !important;
     color: #ff7a00 !important;
     line-height: 1.1 !important;
@@ -68,10 +68,10 @@
 }
 
 .boligkalkulator-subtitle {
-    font-size: 14px !important;
+    font-size: 18px !important;
     color: #000 !important;
     opacity: 0.95 !important;
-    font-weight: 400 !important;
+    font-weight: 500 !important;
     font-family: Chivo, Chivo !important;
     line-height: 1.5 !important;
     margin: 0 !important;
