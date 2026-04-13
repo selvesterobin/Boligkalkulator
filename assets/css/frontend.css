@@ -1200,14 +1200,21 @@ select.boligkalkulator-input {
 
     .boligkalkulator-tab-button[data-tab="1"] {
         width: 70% !important;
+        background: #e5daf8 !important;
     }
 
     .boligkalkulator-tab-button[data-tab="2"] {
         width: 85% !important;
+        background: #ddd0f3 !important;
     }
 
     .boligkalkulator-tab-button[data-tab="3"] {
         width: 100% !important;
+        background: #d4c5ee !important;
+    }
+
+    .boligkalkulator-tab-button.boligkalkulator-tab-active {
+        background: white !important;
     }
 
     .boligkalkulator-input-row {
