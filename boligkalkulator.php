@@ -3,7 +3,7 @@
  * Plugin Name: Boligkalkulator
  * Plugin URI: https://oslobolig.no
  * Description: En profesjonell boligkalkulator for Oslo Bolig med backend-innstillinger og embed-funksjonalitet
- * Version: 1.0.8
+ * Version: 1.0.9
  * Author: Robin Andersen
  * Author URI: https://robin.as
  * License: GPL v2 or later
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants
-define( 'BOLIGKALKULATOR_VERSION', '1.0.8' );
+define( 'BOLIGKALKULATOR_VERSION', '1.0.9' );
 define( 'BOLIGKALKULATOR_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BOLIGKALKULATOR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 

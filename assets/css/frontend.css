@@ -812,6 +812,8 @@ select.boligkalkulator-input {
     line-height: 1 !important;
     text-decoration: none !important;
     box-shadow: none !important;
+    vertical-align: middle !important;
+    transform: translateY(-1px) !important;
 }
 
 .boligkalkulator-help-icon:hover {
