@@ -1001,23 +1001,39 @@ select.boligkalkulator-input {
     color: #333;
 }
 
-/* Info Icon */
+/* Info Box */
+.boligkalkulator-info-box {
+    display: flex !important;
+    align-items: flex-start !important;
+    padding: 15px !important;
+    font-size: 20px !important;
+    line-height: 1.5 !important;
+    background-color: #fffae8 !important;
+    border-radius: 8px !important;
+    width: 90% !important;
+}
+
 .boligkalkulator-info-icon {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    min-width: 22px !important;
     width: 22px !important;
     height: 22px !important;
-    background: #667eea !important;
+    background: #7c3aed !important;
     color: #fff !important;
     border-radius: 50% !important;
     font-size: 14px !important;
     font-weight: 700 !important;
     font-style: normal !important;
-    margin-right: 8px !important;
+    margin-right: 10px !important;
+    margin-top: 4px !important;
     flex-shrink: 0 !important;
-    vertical-align: middle !important;
     line-height: 1 !important;
+}
+
+.boligkalkulator-info-text {
+    flex: 1 !important;
 }
 
 /* Budget Section */
