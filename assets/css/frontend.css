@@ -1199,15 +1199,15 @@ select.boligkalkulator-input {
     }
 
     .boligkalkulator-tab-button[data-tab="1"] {
-        width: 100% !important;
+        width: 70% !important;
     }
 
     .boligkalkulator-tab-button[data-tab="2"] {
-        width: 75% !important;
+        width: 85% !important;
     }
 
     .boligkalkulator-tab-button[data-tab="3"] {
-        width: 50% !important;
+        width: 100% !important;
     }
 
     .boligkalkulator-input-row {
