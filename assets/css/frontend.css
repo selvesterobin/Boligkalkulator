@@ -1156,6 +1156,11 @@ select.boligkalkulator-input {
         order: 10 !important;
     }
 
+    .boligkalkulator-info-box {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
     .boligkalkulator-tab[data-tab="1"] .boligkalkulator-buying-power {
         order: 11 !important;
     }
