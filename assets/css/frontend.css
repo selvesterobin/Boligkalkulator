@@ -1,0 +1,1156 @@
+/* Frontend Calculator Styles */
+
+.boligkalkulator-wrapper,
+.boligkalkulator-wrapper * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.boligkalkulator-wrapper {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    background: transparent;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.boligkalkulator-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header */
+.boligkalkulator-header {
+    background: #f1eaff;
+    color: #ff7a00;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.boligkalkulator-header h2 {
+    font-family: Chivo, Chivo;
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.boligkalkulator-subtitle {
+    font-size: 14px;
+    color: #000;
+    opacity: 0.95;
+    font-weight: 400;
+    font-family: Chivo, Chivo;
+}
+
+/* Tabs Navigation */
+.boligkalkulator-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 2px solid #f0f0f0;
+    background: #f1eaff;
+    padding: 0;
+    margin: 0;
+}
+
+.boligkalkulator-tab-button {
+    padding: 20px;
+    border: none;
+    background: #e5daf8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 3px solid transparent;
+    border-right: 1px solid #e0e0e0;
+    border-radius: 12px 12px 0 0;
+    transition: all 0.3s ease;
+    color: #666;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: left;
+    position: relative;
+    margin-right: 2px;
+}
+
+.boligkalkulator-tab-button:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.boligkalkulator-tab-button.boligkalkulator-tab-active {
+    background: white;
+    color: #9e72fd;
+    border-bottom-color: white;
+    outline: none;
+    box-shadow: none;
+}
+
+.boligkalkulator-tab-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #d4b5ff;
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+}
+
+.boligkalkulator-tab-button.boligkalkulator-tab-active .boligkalkulator-tab-number {
+    background: #9e72fd;
+    color: white;
+}
+
+.boligkalkulator-tab-label {
+    flex: 1;
+}
+
+/* Tab Content */
+.boligkalkulator-tab {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.boligkalkulator-tab.boligkalkulator-tab-active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.boligkalkulator-tab-title {
+    font-family: Chivo, Chivo;
+    font-size: 26px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* Main Content */
+.boligkalkulator-content {
+    padding: 50px 40px;
+}
+
+.boligkalkulator-tab-content {
+    padding: 0;
+}
+
+/* Tab 1 - Buying Power: 2-column responsive layout */
+.boligkalkulator-tab[data-tab="1"] .boligkalkulator-tab-content {
+    column-count: 2;
+    column-gap: 30px;
+}
+
+.boligkalkulator-tab[data-tab="1"] .boligkalkulator-buying-power,
+.boligkalkulator-tab[data-tab="1"] .boligkalkulator-boligspleis-price {
+    break-inside: avoid;
+}
+
+.boligkalkulator-tab[data-tab="1"] .boligkalkulator-tab-navigation {
+    column-span: all;
+    margin-top: 20px;
+}
+
+/* Tab 2 - Own Capital: 2-column responsive layout */
+.boligkalkulator-tab[data-tab="2"] .boligkalkulator-tab-content {
+    column-count: 2;
+    column-gap: 30px;
+}
+
+.boligkalkulator-tab[data-tab="2"] .boligkalkulator-error-message {
+    column-span: all;
+    margin-bottom: 20px;
+}
+
+.boligkalkulator-tab[data-tab="2"] .boligkalkulator-your-share {
+    break-inside: avoid;
+    column-span: 1;
+}
+
+.boligkalkulator-tab[data-tab="2"] .boligkalkulator-tab-navigation {
+    column-span: all;
+    margin-top: 20px;
+}
+
+/* Tab 3 - Budget: 2-column responsive layout */
+.boligkalkulator-tab[data-tab="3"] .boligkalkulator-tab-content {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid #e0e0e0;
+}
+
+.boligkalkulator-tab[data-tab="3"] .boligkalkulator-monthly-costs {
+    break-inside: avoid;
+}
+
+.boligkalkulator-tab[data-tab="3"] .boligkalkulator-budget-items {
+    break-inside: avoid;
+}
+
+.boligkalkulator-tab[data-tab="3"] .boligkalkulator-comparison-section {
+    break-inside: avoid;
+}
+
+.boligkalkulator-tab[data-tab="3"] .boligkalkulator-tab-navigation {
+    column-span: all;
+    margin-top: 20px;
+}
+
+/* Input Rows */
+.boligkalkulator-input-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.boligkalkulator-input-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.boligkalkulator-input-group,
+.boligkalkulator-slider-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.boligkalkulator-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.boligkalkulator-slider-value {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+/* Input Wrapper */
+.boligkalkulator-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.boligkalkulator-input {
+    flex: 1;
+    padding: 15px 15px 15px 15px;
+    font-size: 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.boligkalkulator-input:focus {
+    outline: none;
+    border-color: #9e72fd;
+    box-shadow: 0 0 0 3px rgba(158, 114, 253, 0.1);
+}
+
+.boligkalkulator-input[type="range"] {
+    padding: 0;
+    border: none;
+    height: 4px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #9e72fd, #ff7a00);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.boligkalkulator-input[type="range"]::-moz-range-track {
+    background: transparent;
+    border: none;
+}
+
+.boligkalkulator-input[type="range"]::-moz-range-progress {
+    background: linear-gradient(to right, #9e72fd, #ff7a00);
+    height: 4px;
+    border-radius: 5px;
+}
+
+.boligkalkulator-ownership-slider {
+    height: 4px !important;
+    line-height: 4px;
+    transform: scaleY(0.5);
+    transform-origin: center;
+}
+
+.boligkalkulator-input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #667eea;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+    transition: all 0.2s ease;
+    transform: scaleY(2);
+}
+
+.boligkalkulator-input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scaleY(2) scale(1.1);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6);
+}
+
+.boligkalkulator-input[type="range"]::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #667eea;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+    transition: all 0.2s ease;
+    transform: scaleY(2);
+}
+
+.boligkalkulator-input[type="select"],
+select.boligkalkulator-input {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 20px;
+    padding-right: 40px;
+}
+
+.boligkalkulator-currency,
+.boligkalkulator-percentage {
+    color: #999;
+    font-weight: 500;
+    font-size: 14px;
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Slider Value Display */
+.boligkalkulator-slider-value {
+    display: inline-block;
+    background: #9e72fd;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.boligkalkulator-slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* Result Boxes */
+.boligkalkulator-result-box {
+    background: linear-gradient(135deg, rgba(158,114,253,0.98) 0%, rgba(158,114,253,0.95) 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+}
+
+.boligkalkulator-boligspleis-price {
+    background: #f1eaff;
+    color: #000;
+    padding: 20px;
+    min-height: auto;
+    margin: 15px 0;
+}
+
+.boligkalkulator-boligspleis-price .boligkalkulator-result-label {
+    font-size: 12px;
+}
+
+.boligkalkulator-boligspleis-price .boligkalkulator-result-value {
+    font-size: 28px;
+}
+
+.boligkalkulator-result-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.boligkalkulator-result-value {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Financing Breakdown */
+.boligkalkulator-financing-breakdown {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.boligkalkulator-financing-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+    justify-items: end;
+}
+
+.boligkalkulator-financing-row:last-child {
+    border-bottom: none;
+}
+
+.boligkalkulator-financing-label {
+    justify-self: start;
+}
+
+.boligkalkulator-your-share .boligkalkulator-financing-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: none;
+    align-items: center;
+    justify-items: end;
+    background: transparent;
+}
+
+.boligkalkulator-your-share .boligkalkulator-financing-breakdown {
+    background: transparent;
+}
+
+.boligkalkulator-your-share .boligkalkulator-financing-row.boligkalkulator-highlight-row {
+    background: white;
+    padding: 15px;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 6px;
+    border: 2px solid #9e72fd;
+    border-bottom: 2px solid #9e72fd;
+    font-weight: 600;
+}
+
+.boligkalkulator-your-share .boligkalkulator-financing-label {
+    justify-self: start;
+}
+
+.boligkalkulator-borettslag-only {
+    display: block;
+}
+
+.boligkalkulator-borettslag-only.hide {
+    display: none;
+}
+
+/* Comparison Section */
+.boligkalkulator-comparison-section {
+    background: white;
+    padding: 0;
+    margin: 30px 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.boligkalkulator-comparison-section h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 15px 0;
+    text-transform: none;
+    letter-spacing: normal;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-top: 30px;
+}
+
+/* Gray color override for comparison section */
+.boligkalkulator-comparison-section .boligkalkulator-budget-item-highlight {
+    background: linear-gradient(135deg, rgba(245, 245, 245, 0.8) 0%, rgba(240, 240, 240, 0.1) 100%) !important;
+    border: 2px solid #e0e0e0 !important;
+    border-bottom: 2px solid #e0e0e0 !important;
+}
+
+.boligkalkulator-comparison-section .boligkalkulator-result-box {
+    background: linear-gradient(135deg, rgba(240, 240, 240, 0.98) 0%, rgba(240, 240, 240, 0.95) 100%) !important;
+    color: #333 !important;
+}
+
+.boligkalkulator-comparison-table {
+    display: none;
+}
+
+/* Comparison styling removed - now using budget-item layout */
+
+.boligkalkulator-comparison-table tr.boligkalkulator-comparison-total {
+    background: linear-gradient(135deg, rgba(158,114,253,0.98) 0%, rgba(158,114,253,0.95) 100%) !important;
+    color: white !important;
+    padding: 30px !important;
+    border-radius: 12px !important;
+    border: none !important;
+    margin: 30px 0 !important;
+    min-height: 120px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    text-align: center !important;
+}
+
+.boligkalkulator-comparison-label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.boligkalkulator-comparison-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+.boligkalkulator-comparison-table tr.boligkalkulator-comparison-total .boligkalkulator-comparison-label {
+    font-weight: 600;
+    color: #333 !important;
+    font-size: 14px !important;
+    display: block !important;
+    margin-bottom: 8px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.boligkalkulator-comparison-table tr.boligkalkulator-comparison-total .boligkalkulator-comparison-value {
+    font-weight: 700;
+    font-size: 36px !important;
+    color: #333 !important;
+    display: block !important;
+}
+
+.boligkalkulator-comparison-percent {
+    font-size: 12px;
+    color: #667eea;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+
+.boligkalkulator-financing-label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.boligkalkulator-financing-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    text-align: right;
+    min-width: 150px;
+}
+
+.boligkalkulator-financing-value.invalid-capital {
+    color: #dc3545;
+}
+
+.boligkalkulator-financing-percent,
+.boligkalkulator-percentage {
+    font-size: 13px;
+    color: #999;
+    font-weight: 500;
+    text-align: right;
+    min-width: 60px;
+}
+
+.boligkalkulator-financing-desc {
+    font-size: 11px;
+    color: #999;
+    font-style: italic;
+    display: block;
+    margin-top: 4px;
+}
+
+/* Sections */
+.boligkalkulator-your-share,
+.boligkalkulator-your-financing,
+.boligkalkulator-budget-section,
+.boligkalkulator-comparison-section {
+    margin: 30px 0;
+}
+
+.boligkalkulator-your-financing .boligkalkulator-financing-breakdown {
+    background: #f1eaff;
+}
+
+.boligkalkulator-your-financing .boligkalkulator-financing-row:not(:last-child) {
+    border-bottom: 1px solid #e8d5ff;
+}
+
+.boligkalkulator-highlight-section {
+    background: linear-gradient(135deg, rgba(158, 114, 253, 0.05) 0%, rgba(255, 122, 0, 0.05) 100%);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #9e72fd;
+}
+
+.boligkalkulator-your-share h4,
+.boligkalkulator-your-financing h4,
+.boligkalkulator-budget-section h4,
+.boligkalkulator-comparison-section h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.boligkalkulator-your-share h4 {
+    font-size: 20px;
+}
+
+.boligkalkulator-your-financing h4 {
+    font-size: 20px;
+}
+
+.boligkalkulator-budget-section h4 {
+    font-size: 20px;
+}
+
+.boligkalkulator-budget-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Budget Items */
+.boligkalkulator-budget-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.boligkalkulator-budget-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.boligkalkulator-budget-item:last-child {
+    border-bottom: none;
+}
+
+.boligkalkulator-budget-item-highlight {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%) !important;
+    border: 2px solid #9e72fd !important;
+    border-bottom: 2px solid #9e72fd !important;
+    font-weight: 600 !important;
+}
+
+.boligkalkulator-capital-cost-item {
+    display: none;
+}
+
+.boligkalkulator-capital-cost-item.show {
+    display: grid;
+}
+
+.boligkalkulator-budget-label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.boligkalkulator-budget-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    text-align: right;
+}
+
+.boligkalkulator-budget-value-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.boligkalkulator-help-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #9e72fd;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: help;
+    position: relative;
+    flex-shrink: 0;
+    margin-left: 6px;
+}
+
+.boligkalkulator-help-icon:hover {
+    background: #8a5fdd;
+}
+
+.boligkalkulator-help-icon .boligkalkulator-tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: normal;
+    z-index: 1000;
+    width: 200px;
+    text-align: center;
+    line-height: 1.4;
+    white-space: normal;
+}
+
+.boligkalkulator-help-icon .boligkalkulator-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #333;
+}
+
+.boligkalkulator-help-icon:hover .boligkalkulator-tooltip {
+    display: block;
+}
+
+.boligkalkulator-budget-percent {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+}
+
+.boligkalkulator-budget-desc {
+    font-size: 11px;
+    color: #999;
+    grid-column: 1 / -1;
+    margin-top: -8px;
+}
+
+/* Results Section */
+.boligkalkulator-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Financing Chart */
+.boligkalkulator-financing-chart {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.boligkalkulator-chart-title,
+.boligkalkulator-budget-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.boligkalkulator-chart {
+    margin-bottom: 25px;
+}
+
+.boligkalkulator-bar-container {
+    width: 100%;
+}
+
+.boligkalkulator-bar {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.boligkalkulator-bar-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.boligkalkulator-bar-own {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.boligkalkulator-bar-invest {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.boligkalkulator-bar-bank {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.boligkalkulator-bar-label {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Financing Details */
+.boligkalkulator-financing-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.boligkalkulator-financing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    transition: all 0.2s ease;
+}
+
+.boligkalkulator-financing-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.boligkalkulator-financing-own {
+    border-left-color: #667eea;
+}
+
+.boligkalkulator-financing-invest {
+    border-left-color: #f5576c;
+}
+
+.boligkalkulator-financing-bank {
+    border-left-color: #00f2fe;
+}
+
+.boligkalkulator-financing-total {
+    border-left-color: #333;
+    background: #f0f0f0;
+    font-weight: 700;
+}
+
+.boligkalkulator-financing-label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.boligkalkulator-financing-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Budget Section */
+.boligkalkulator-budget {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.boligkalkulator-budget-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.boligkalkulator-budget-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+.boligkalkulator-budget-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.boligkalkulator-budget-total {
+    border-left-color: #333;
+    background: #f0f0f0;
+    font-weight: 700;
+}
+
+.boligkalkulator-budget-label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.boligkalkulator-budget-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Tab Navigation Buttons */
+.boligkalkulator-tab-navigation {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.boligkalkulator-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boligkalkulator-btn-next {
+    background: #9e72fd;
+    color: white;
+}
+
+.boligkalkulator-btn-next:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(158, 114, 253, 0.4);
+}
+
+.boligkalkulator-btn-prev {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.boligkalkulator-btn-prev:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.boligkalkulator-btn-search {
+    background: #9e72fd;
+    color: white;
+    margin-left: auto;
+}
+
+.boligkalkulator-btn-search:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(158, 114, 253, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .boligkalkulator-wrapper {
+        background: none;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    .boligkalkulator-container {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* Tab 1 - 1 column on mobile */
+    .boligkalkulator-tab[data-tab="1"] .boligkalkulator-tab-content {
+        column-count: 1;
+    }
+
+    /* Tab 2 - 1 column on mobile */
+    .boligkalkulator-tab[data-tab="2"] .boligkalkulator-tab-content {
+        column-count: 1;
+    }
+
+    /* Tab 3 - 1 column on mobile */
+    .boligkalkulator-tab[data-tab="3"] .boligkalkulator-tab-content {
+        column-count: 1;
+    }
+
+    .boligkalkulator-tabs {
+        grid-template-columns: 1fr;
+    }
+
+    .boligkalkulator-tab-button {
+        padding: 15px;
+        font-size: 12px;
+    }
+
+    .boligkalkulator-input-row {
+        grid-template-columns: 1fr;
+    }
+
+    .boligkalkulator-result-value {
+        font-size: 28px;
+    }
+
+    .boligkalkulator-financing-row,
+    .boligkalkulator-budget-item {
+        grid-template-columns: 1fr auto;
+    }
+
+    .boligkalkulator-tab-navigation {
+        flex-direction: column;
+    }
+
+    .boligkalkulator-btn {
+        width: 100%;
+    }
+
+    .boligkalkulator-content {
+        padding: 20px;
+    }
+
+    .boligkalkulator-header {
+        padding: 30px 20px;
+    }
+
+    .boligkalkulator-header h2 {
+        font-size: 24px;
+    }
+
+    .boligkalkulator-input-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .boligkalkulator-results {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .boligkalkulator-financing-chart,
+    .boligkalkulator-budget {
+        padding: 20px;
+    }
+}
+
+/* Tablet Portrait - 1 column */
+@media (max-width: 1023px) {
+    .boligkalkulator-tab[data-tab="1"] .boligkalkulator-tab-content {
+        column-count: 1;
+    }
+
+    .boligkalkulator-tab[data-tab="2"] .boligkalkulator-tab-content {
+        column-count: 1;
+    }
+
+    .boligkalkulator-tab[data-tab="3"] .boligkalkulator-tab-content {
+        column-count: 1;
+    }
+
+    .boligkalkulator-comparison-section h4 {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .boligkalkulator-header h2 {
+        font-size: 20px;
+    }
+
+    .boligkalkulator-header {
+        padding: 20px;
+    }
+
+    .boligkalkulator-content {
+        padding: 15px;
+    }
+
+    .boligkalkulator-input,
+    .boligkalkulator-slider {
+        font-size: 16px;
+    }
+
+    .boligkalkulator-financing-label,
+    .boligkalkulator-budget-label {
+        font-size: 12px;
+    }
+
+    .boligkalkulator-financing-value,
+    .boligkalkulator-budget-value {
+        font-size: 14px;
+    }
+}
