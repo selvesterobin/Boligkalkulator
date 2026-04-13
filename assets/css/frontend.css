@@ -1147,6 +1147,25 @@ select.boligkalkulator-input {
     /* Tab 1 - 1 column on mobile */
     .boligkalkulator-tab[data-tab="1"] .boligkalkulator-tab-content {
         column-count: 1;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Move info box above result boxes on mobile */
+    .boligkalkulator-info-row {
+        order: 10 !important;
+    }
+
+    .boligkalkulator-tab[data-tab="1"] .boligkalkulator-buying-power {
+        order: 11 !important;
+    }
+
+    .boligkalkulator-tab[data-tab="1"] .boligkalkulator-boligspleis-price {
+        order: 12 !important;
+    }
+
+    .boligkalkulator-tab[data-tab="1"] .boligkalkulator-tab-navigation {
+        order: 13 !important;
     }
 
     /* Tab 2 - 1 column on mobile */

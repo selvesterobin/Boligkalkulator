@@ -125,7 +125,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             </div>
                         </div>
 
-                        <div class="boligkalkulator-input-row">
+                        <div class="boligkalkulator-input-row boligkalkulator-info-row">
                             <div class="boligkalkulator-info-box">
                                 <span class="boligkalkulator-info-icon">i</span>
                                 <span class="boligkalkulator-info-text"><?php echo esc_html( $two_applicants_text ); ?></span>
