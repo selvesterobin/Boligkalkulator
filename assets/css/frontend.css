@@ -197,6 +197,14 @@
     break-inside: avoid;
 }
 
+.boligkalkulator-tab[data-tab="1"] .boligkalkulator-input-row {
+    break-inside: avoid;
+}
+
+.boligkalkulator-tab[data-tab="1"] .boligkalkulator-input-group {
+    break-inside: avoid;
+}
+
 .boligkalkulator-tab[data-tab="1"] .boligkalkulator-tab-navigation {
     column-span: all;
     margin-top: 20px;
