@@ -9,6 +9,10 @@
  * License: GPL v2 or later
  * Text Domain: boligkalkulator
  * Domain Path: /languages
+ * GitHub Plugin URI: selvesterobin/Boligkalkulator
+ * Primary Branch: master
+ * Requires PHP: 7.4
+ * Requires at least: 5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
