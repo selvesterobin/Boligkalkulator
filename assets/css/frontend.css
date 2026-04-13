@@ -846,6 +846,8 @@ select.boligkalkulator-input {
     text-align: center;
     line-height: 1.4;
     white-space: normal;
+    text-transform: none !important;
+    letter-spacing: normal !important;
 }
 
 .boligkalkulator-help-icon .boligkalkulator-tooltip::after {
