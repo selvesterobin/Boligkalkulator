@@ -124,6 +124,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
 
                         <div class="boligkalkulator-input-row">
                             <div style="padding: 15px; font-size: 20px; line-height: 1.5; background-color: #fffae8; border-radius: 8px; width: 90%;">
+                                <span class="boligkalkulator-info-icon">ℹ</span>
                                 <?php esc_html_e( 'Hvis dere er to søkere, kan dere summere opp tallene i hvert felt.', 'boligkalkulator' ); ?>
                             </div>
                         </div>

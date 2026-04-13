@@ -1001,6 +1001,25 @@ select.boligkalkulator-input {
     color: #333;
 }
 
+/* Info Icon */
+.boligkalkulator-info-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 22px !important;
+    height: 22px !important;
+    background: #667eea !important;
+    color: #fff !important;
+    border-radius: 50% !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    font-style: normal !important;
+    margin-right: 8px !important;
+    flex-shrink: 0 !important;
+    vertical-align: middle !important;
+    line-height: 1 !important;
+}
+
 /* Budget Section */
 .boligkalkulator-budget {
     background: #f8f9fa;
