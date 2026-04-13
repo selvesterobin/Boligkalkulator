@@ -70,7 +70,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             <div class="boligkalkulator-input-group">
                                 <label class="boligkalkulator-label">
                                     <?php esc_html_e( 'Årsinntekt', 'boligkalkulator' ); ?>
-                                    <span class="boligkalkulator-help-icon" data-help="annual_income_help" data-content="<?php echo esc_attr( $annual_income_help ); ?>" title="?">?</span>
+                                    <span class="boligkalkulator-help-icon" data-help="annual_income_help" data-content="<?php echo esc_attr( $annual_income_help ); ?>">?</span>
                                 </label>
                                 <div class="boligkalkulator-input-wrapper">
                                     <input
@@ -86,7 +86,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             <div class="boligkalkulator-input-group">
                                 <label class="boligkalkulator-label">
                                     <?php esc_html_e( 'Sparepenger', 'boligkalkulator' ); ?>
-                                    <span class="boligkalkulator-help-icon" data-help="savings_help" data-content="<?php echo esc_attr( $savings_help ); ?>" title="?">?</span>
+                                    <span class="boligkalkulator-help-icon" data-help="savings_help" data-content="<?php echo esc_attr( $savings_help ); ?>">?</span>
                                 </label>
                                 <div class="boligkalkulator-input-wrapper">
                                     <input
@@ -102,7 +102,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             <div class="boligkalkulator-input-group">
                                 <label class="boligkalkulator-label">
                                     <?php esc_html_e( 'Dagens lån', 'boligkalkulator' ); ?>
-                                    <span class="boligkalkulator-help-icon" data-help="existing_debt_help" data-content="<?php echo esc_attr( $existing_debt_help ); ?>" title="?">?</span>
+                                    <span class="boligkalkulator-help-icon" data-help="existing_debt_help" data-content="<?php echo esc_attr( $existing_debt_help ); ?>">?</span>
                                 </label>
                                 <div class="boligkalkulator-input-wrapper">
                                     <input
@@ -126,7 +126,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             <div class="boligkalkulator-input-group">
                                 <label class="boligkalkulator-label">
                                     <?php esc_html_e( 'Antall barn under 18 år', 'boligkalkulator' ); ?>
-                                    <span class="boligkalkulator-help-icon" data-help="children_count_help" data-content="<?php echo esc_attr( $children_count_help ); ?>" title="?">?</span>
+                                    <span class="boligkalkulator-help-icon" data-help="children_count_help" data-content="<?php echo esc_attr( $children_count_help ); ?>">?</span>
                                 </label>
                                 <div class="boligkalkulator-input-wrapper">
                                     <input
@@ -141,7 +141,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             <div class="boligkalkulator-input-group">
                                 <label class="boligkalkulator-label">
                                     <?php esc_html_e( 'Antall biler', 'boligkalkulator' ); ?>
-                                    <span class="boligkalkulator-help-icon" data-help="cars_count_help" data-content="<?php echo esc_attr( $cars_count_help ); ?>" title="?">?</span>
+                                    <span class="boligkalkulator-help-icon" data-help="cars_count_help" data-content="<?php echo esc_attr( $cars_count_help ); ?>">?</span>
                                 </label>
                                 <div class="boligkalkulator-input-wrapper">
                                     <input
@@ -320,7 +320,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                     <span class="boligkalkulator-budget-label"><?php esc_html_e( 'Leie av OsloBolig (estimat)', 'boligkalkulator' ); ?></span>
                                     <div class="boligkalkulator-budget-value-wrapper">
                                         <span class="boligkalkulator-budget-value" data-type="oslobolig-rent">5 625 <?php echo esc_html( $currency_symbol ); ?></span>
-                                        <span class="boligkalkulator-help-icon" data-help="oslobolig_rent_help" data-content="<?php echo esc_attr( $oslobolig_rent_help ); ?>" title="?">?</span>
+                                        <span class="boligkalkulator-help-icon" data-help="oslobolig_rent_help" data-content="<?php echo esc_attr( $oslobolig_rent_help ); ?>">?</span>
                                     </div>
                                 </div>
                             </div>
@@ -334,7 +334,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                     <span class="boligkalkulator-budget-label"><?php esc_html_e( 'Fellesutgifter - din andel', 'boligkalkulator' ); ?></span>
                                     <div class="boligkalkulator-budget-value-wrapper">
                                         <span class="boligkalkulator-budget-value" data-type="common-costs">1 400 <?php echo esc_html( $currency_symbol ); ?></span>
-                                        <span class="boligkalkulator-help-icon" data-help="common_costs_help" data-content="<?php echo esc_attr( $common_costs_help ); ?>" title="?">?</span>
+                                        <span class="boligkalkulator-help-icon" data-help="common_costs_help" data-content="<?php echo esc_attr( $common_costs_help ); ?>">?</span>
                                     </div>
                                 </div>
 
@@ -342,7 +342,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                     <span class="boligkalkulator-budget-label"><?php esc_html_e( 'Kapitalkostnad – din andel fellesgjeld', 'boligkalkulator' ); ?></span>
                                     <div class="boligkalkulator-budget-value-wrapper">
                                         <span class="boligkalkulator-budget-value" data-type="capital-cost">3 125 <?php echo esc_html( $currency_symbol ); ?></span>
-                                        <span class="boligkalkulator-help-icon" data-help="capital_cost_help" data-content="<?php echo esc_attr( $capital_cost_help ); ?>" title="?">?</span>
+                                        <span class="boligkalkulator-help-icon" data-help="capital_cost_help" data-content="<?php echo esc_attr( $capital_cost_help ); ?>">?</span>
                                     </div>
                                 </div>
 
@@ -350,7 +350,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                     <span class="boligkalkulator-budget-label"><?php esc_html_e( 'Renter og avdrag på banklån', 'boligkalkulator' ); ?></span>
                                     <div class="boligkalkulator-budget-value-wrapper">
                                         <span class="boligkalkulator-budget-value" data-type="bank-interest">3 819 <?php echo esc_html( $currency_symbol ); ?></span>
-                                        <span class="boligkalkulator-help-icon" data-help="bank_interest_help" data-content="<?php echo esc_attr( $bank_interest_help ); ?>" title="?">?</span>
+                                        <span class="boligkalkulator-help-icon" data-help="bank_interest_help" data-content="<?php echo esc_attr( $bank_interest_help ); ?>">?</span>
                                     </div>
                                 </div>
                             </div>

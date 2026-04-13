@@ -803,7 +803,7 @@ select.boligkalkulator-input {
     color: white !important;
     font-size: 10px !important;
     font-weight: bold !important;
-    cursor: help !important;
+    cursor: pointer !important;
     position: relative !important;
     flex-shrink: 0 !important;
     margin-left: 6px !important;
