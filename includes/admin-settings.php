@@ -4,12 +4,14 @@
  */
 
 add_action( 'admin_menu', function() {
-    add_options_page(
+    add_menu_page(
         'Boligkalkulator Innstillinger',
         'Boligkalkulator',
-        'manage_options',
+        'edit_pages',
         'boligkalkulator',
-        'boligkalkulator_render_settings_page'
+        'boligkalkulator_render_settings_page',
+        'dashicons-calculator',
+        30
     );
 } );
 
