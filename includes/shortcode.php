@@ -132,10 +132,10 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             </div>
                         </div>
 
-                        <div class="boligkalkulator-input-row">
+                        <div class="boligkalkulator-input-row boligkalkulator-column-break">
                             <div class="boligkalkulator-input-group">
                                 <label class="boligkalkulator-label">
-                                    <?php esc_html_e( 'Antall barn under 18 år', 'boligkalkulator' ); ?>
+                                    <?php esc_html_e( 'Antall barn', 'boligkalkulator' ); ?>
                                     <span class="boligkalkulator-help-icon" data-help="children_count_help" data-content="<?php echo esc_attr( $children_count_help ); ?>">?</span>
                                 </label>
                                 <div class="boligkalkulator-input-wrapper">

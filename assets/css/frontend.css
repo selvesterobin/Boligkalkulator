@@ -195,14 +195,23 @@
 .boligkalkulator-tab[data-tab="1"] .boligkalkulator-buying-power,
 .boligkalkulator-tab[data-tab="1"] .boligkalkulator-boligspleis-price {
     break-inside: avoid;
+    -webkit-column-break-inside: avoid;
 }
 
 .boligkalkulator-tab[data-tab="1"] .boligkalkulator-input-row {
     break-inside: avoid;
+    -webkit-column-break-inside: avoid;
 }
 
 .boligkalkulator-tab[data-tab="1"] .boligkalkulator-input-group {
     break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+}
+
+/* Force column 2 to start at children/cars row in all browsers including Safari */
+.boligkalkulator-tab[data-tab="1"] .boligkalkulator-column-break {
+    break-before: column;
+    -webkit-column-break-before: always;
 }
 
 .boligkalkulator-tab[data-tab="1"] .boligkalkulator-tab-navigation {
@@ -221,9 +230,26 @@
     margin-bottom: 20px;
 }
 
+.boligkalkulator-tab[data-tab="2"] .boligkalkulator-input-row {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+}
+
+.boligkalkulator-tab[data-tab="2"] .boligkalkulator-financing-breakdown {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+}
+
 .boligkalkulator-tab[data-tab="2"] .boligkalkulator-your-share {
     break-inside: avoid;
-    column-span: 1;
+    -webkit-column-break-inside: avoid;
+    break-before: column;
+    -webkit-column-break-before: always;
+}
+
+.boligkalkulator-tab[data-tab="2"] .boligkalkulator-your-financing {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
 }
 
 .boligkalkulator-tab[data-tab="2"] .boligkalkulator-tab-navigation {
@@ -561,10 +587,11 @@ select.boligkalkulator-input {
 }
 
 /* Gray color override for comparison section */
-.boligkalkulator-comparison-section .boligkalkulator-budget-item-highlight {
-    background: linear-gradient(135deg, rgba(245, 245, 245, 0.8) 0%, rgba(240, 240, 240, 0.1) 100%) !important;
-    border: 2px solid #e0e0e0 !important;
-    border-bottom: 2px solid #e0e0e0 !important;
+.boligkalkulator-wrapper .boligkalkulator-comparison-section .boligkalkulator-budget-item-highlight {
+    background: linear-gradient(135deg, rgba(240, 240, 240, 0.98) 0%, rgba(240, 240, 240, 0.95) 100%) !important;
+    border: 2px solid #d0d0d0 !important;
+    border-bottom: 2px solid #d0d0d0 !important;
+    border-radius: 12px !important;
 }
 
 .boligkalkulator-comparison-section .boligkalkulator-result-box {
@@ -746,6 +773,7 @@ select.boligkalkulator-input {
     padding: 15px !important;
     background: white !important;
     border-bottom: 1px solid #eee !important;
+    border-left: 3px solid #9e72fd !important;
     align-items: center !important;
     margin: 0 !important;
     min-height: 56px !important;
@@ -754,6 +782,11 @@ select.boligkalkulator-input {
 
 .boligkalkulator-wrapper .boligkalkulator-budget-item:last-child {
     border-bottom: none !important;
+}
+
+/* Comparison section: gray left border instead of purple */
+.boligkalkulator-wrapper .boligkalkulator-comparison-section .boligkalkulator-budget-item {
+    border-left: 3px solid #e0e0e0 !important;
 }
 
 .boligkalkulator-wrapper .boligkalkulator-budget-item-highlight {
