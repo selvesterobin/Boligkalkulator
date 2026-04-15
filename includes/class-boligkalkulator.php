@@ -91,7 +91,7 @@ class Boligkalkulator {
      * Enqueue admin assets
      */
     public function enqueue_admin_assets( $hook ) {
-        if ( 'settings_page_boligkalkulator' === $hook ) {
+        if ( 'toplevel_page_boligkalkulator' === $hook ) {
             wp_enqueue_style(
                 'boligkalkulator-admin',
                 BOLIGKALKULATOR_PLUGIN_URL . 'assets/css/admin.css',

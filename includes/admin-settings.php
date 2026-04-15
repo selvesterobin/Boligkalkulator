@@ -3,6 +3,24 @@
  * Admin Settings Page
  */
 
+// Custom save handler for settings (works with edit_pages capability)
+add_action( 'admin_post_boligkalkulator_save_settings', function() {
+    if ( ! current_user_can( 'edit_pages' ) ) {
+        wp_die( 'Du har ikke tilgang til å endre disse innstillingene.' );
+    }
+
+    check_admin_referer( 'boligkalkulator_save_settings', 'boligkalkulator_nonce' );
+
+    $settings = isset( $_POST['boligkalkulator_settings'] ) ? $_POST['boligkalkulator_settings'] : array();
+
+    // Use the sanitize method from the main class
+    $sanitized = Boligkalkulator::get_instance()->sanitize_settings( $settings );
+    update_option( 'boligkalkulator_settings', $sanitized );
+
+    wp_safe_redirect( add_query_arg( 'settings-updated', 'true', admin_url( 'admin.php?page=boligkalkulator' ) ) );
+    exit;
+} );
+
 add_action( 'admin_menu', function() {
     add_menu_page(
         'Boligkalkulator Innstillinger',
@@ -22,6 +40,10 @@ function boligkalkulator_render_settings_page() {
             <h1><?php esc_html_e( 'Boligkalkulator Innstillinger', 'boligkalkulator' ); ?></h1>
             <p class="boligkalkulator-admin-subtitle"><?php esc_html_e( 'Konfigurer kalkulator-parametere for hver tab', 'boligkalkulator' ); ?></p>
         </div>
+
+        <?php if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] === 'true' ) : ?>
+            <div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Innstillinger lagret.', 'boligkalkulator' ); ?></p></div>
+        <?php endif; ?>
         
         <div class="boligkalkulator-shortcode-card">
             <h3><?php esc_html_e( 'Shortcode', 'boligkalkulator' ); ?></h3>
@@ -40,9 +62,10 @@ function boligkalkulator_render_settings_page() {
             </div>
         </div>
         
-        <form method="post" action="options.php" class="boligkalkulator-form">
+        <form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="boligkalkulator-form">
+            <input type="hidden" name="action" value="boligkalkulator_save_settings" />
             <?php
-            settings_fields( 'boligkalkulator_settings_group' );
+            wp_nonce_field( 'boligkalkulator_save_settings', 'boligkalkulator_nonce' );
             $settings = get_option( 'boligkalkulator_settings', array() );
             ?>
 
