@@ -344,7 +344,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
 
                     <div class="boligkalkulator-tab-content">
                         <div class="boligkalkulator-budget-section">
-                            <h4><?php esc_html_e( 'Estimerte månedlige utgifter', 'boligkalkulator' ); ?></h4>
+                            <h4><?php esc_html_e( 'Boligspleis - estimert månedlig utgifter', 'boligkalkulator' ); ?></h4>
 
                             <div class="boligkalkulator-budget-items">
                                 <div class="boligkalkulator-budget-item boligkalkulator-budget-item-highlight">
