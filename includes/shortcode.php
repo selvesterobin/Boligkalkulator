@@ -218,7 +218,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                     <span class="boligkalkulator-help-icon" data-help="ownership_form_help" data-content="<?php echo esc_attr( $ownership_form_help ); ?>">?</span>
                                 </label>
                                 <select class="boligkalkulator-input boligkalkulator-ownership-form">
-                                    <option value="borettslag"><?php esc_html_e( 'Borettslag', 'boligkalkulator' ); ?></option>
+                                    <option value="borettslag"><?php esc_html_e( 'Borettslag med fellesgjeld 50%', 'boligkalkulator' ); ?></option>
                                     <option value="selveier"><?php esc_html_e( 'Selveier', 'boligkalkulator' ); ?></option>
                                 </select>
                             </div>
