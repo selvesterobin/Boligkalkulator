@@ -166,7 +166,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                         </div>
 
                         <div class="boligkalkulator-result-box boligkalkulator-buying-power">
-                            <span class="boligkalkulator-result-label"><?php esc_html_e( 'Du kan kjøpe for', 'boligkalkulator' ); ?></span>
+                            <span class="boligkalkulator-result-label"><?php esc_html_e( 'Vi tror du kan kjøpe for', 'boligkalkulator' ); ?></span>
                             <span class="boligkalkulator-result-value" data-type="buying-power">3 800 000 <?php echo esc_html( $currency_symbol ); ?></span>
                         </div>
 
