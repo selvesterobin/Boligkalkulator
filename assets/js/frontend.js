@@ -349,7 +349,10 @@
             }
         }
 
-        const monthlyBankPayment = calculateMonthlyAnnuity(bankLoanAmount, bankInterestPct, safeLoanYears);
+        // Split monthly bank payment into interest and repayment (avdrag)
+        const monthlyBankInterest = bankLoanAmount * (bankInterestPct / 100) / 12;
+        const monthlyBankRepayment = (safeLoanYears > 0) ? (bankLoanAmount / safeLoanYears / 12) : 0;
+        const monthlyBankPayment = monthlyBankInterest + monthlyBankRepayment;
 
         if (ownershipForm === 'borettslag') {
             const borettslagCapitalPct = parseFloat(settings.borettslag_capital_cost) || 5;
@@ -361,7 +364,8 @@
             updateElementText(calculator, 'oslobolig-rent', formatCurrency(monthlyRent));
             updateElementText(calculator, 'common-costs',   formatCurrency(monthlyDriftCosts));
             updateElementText(calculator, 'capital-cost',   formatCurrency(monthlyCapitalCost));
-            updateElementText(calculator, 'bank-interest',  formatCurrency(monthlyBankPayment));
+            updateElementText(calculator, 'bank-interest',  formatCurrency(monthlyBankInterest));
+            updateElementText(calculator, 'bank-repayment', formatCurrency(monthlyBankRepayment));
             updateElementText(calculator, 'total-monthly',  formatCurrency(totalMonthly));
         } else {
             const totalMonthly = monthlyRent + monthlyDriftCosts + monthlyBankPayment;
@@ -369,7 +373,8 @@
             updateElementText(calculator, 'oslobolig-rent', formatCurrency(monthlyRent));
             updateElementText(calculator, 'common-costs',   formatCurrency(monthlyDriftCosts));
             updateElementText(calculator, 'capital-cost',   formatCurrency(0));
-            updateElementText(calculator, 'bank-interest',  formatCurrency(monthlyBankPayment));
+            updateElementText(calculator, 'bank-interest',  formatCurrency(monthlyBankInterest));
+            updateElementText(calculator, 'bank-repayment', formatCurrency(monthlyBankRepayment));
             updateElementText(calculator, 'total-monthly',  formatCurrency(totalMonthly));
 
             const capitalCostItem = calculator.querySelector('.boligkalkulator-capital-cost-item');
@@ -384,12 +389,20 @@
 
         let compCapitalCost        = 0;
         let compMonthlyBankPayment = 0;
+        let compMonthlyBankInterest = 0;
+        let compMonthlyBankRepayment = 0;
 
         if (ownershipForm === 'borettslag') {
             compCapitalCost        = (totalPrice / 2) * (borettslagCapitalPct / 100) / 12;
-            compMonthlyBankPayment = calculateMonthlyAnnuity((totalPrice / 2) * 0.9, bankInterestPct, safeLoanYears);
+            const compPrincipal = (totalPrice / 2) * 0.9;
+            compMonthlyBankInterest = compPrincipal * (bankInterestPct / 100) / 12;
+            compMonthlyBankRepayment = (safeLoanYears > 0) ? (compPrincipal / safeLoanYears / 12) : 0;
+            compMonthlyBankPayment = compMonthlyBankInterest + compMonthlyBankRepayment;
         } else {
-            compMonthlyBankPayment = calculateMonthlyAnnuity(totalPrice * 0.9, bankInterestPct, safeLoanYears);
+            const compPrincipal = totalPrice * 0.9;
+            compMonthlyBankInterest = compPrincipal * (bankInterestPct / 100) / 12;
+            compMonthlyBankRepayment = (safeLoanYears > 0) ? (compPrincipal / safeLoanYears / 12) : 0;
+            compMonthlyBankPayment = compMonthlyBankInterest + compMonthlyBankRepayment;
         }
 
         const compTotal = compDriftCosts + compCapitalCost + compMonthlyBankPayment;
@@ -397,7 +410,8 @@
         updateElementText(calculator, 'comparison-oslobolig', formatCurrency(0));
         updateElementText(calculator, 'comparison-drift',     formatCurrency(compDriftCosts));
         updateElementText(calculator, 'comparison-capital',   formatCurrency(compCapitalCost));
-        updateElementText(calculator, 'comparison-renter',    formatCurrency(compMonthlyBankPayment));
+        updateElementText(calculator, 'comparison-renter',    formatCurrency(compMonthlyBankInterest));
+        updateElementText(calculator, 'comparison-repayment', formatCurrency(compMonthlyBankRepayment));
         updateElementText(calculator, 'comparison-total',     formatCurrency(compTotal));
     }
 

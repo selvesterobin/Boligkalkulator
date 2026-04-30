@@ -369,10 +369,17 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                 </div>
 
                                 <div class="boligkalkulator-budget-item">
-                                    <span class="boligkalkulator-budget-label"><?php esc_html_e( 'Renter og avdrag på banklån', 'boligkalkulator' ); ?></span>
+                                    <span class="boligkalkulator-budget-label"><?php esc_html_e( 'Renter på banklån', 'boligkalkulator' ); ?></span>
                                     <div class="boligkalkulator-budget-value-wrapper">
-                                        <span class="boligkalkulator-budget-value" data-type="bank-interest">3 819 <?php echo esc_html( $currency_symbol ); ?></span>
+                                        <span class="boligkalkulator-budget-value" data-type="bank-interest">2 000 <?php echo esc_html( $currency_symbol ); ?></span>
                                         <span class="boligkalkulator-help-icon" data-help="bank_interest_help" data-content="<?php echo esc_attr( $bank_interest_help ); ?>">?</span>
+                                    </div>
+                                </div>
+
+                                <div class="boligkalkulator-budget-item">
+                                    <span class="boligkalkulator-budget-label"><?php esc_html_e( 'Avdrag på banklån (egen sparing)', 'boligkalkulator' ); ?></span>
+                                    <div class="boligkalkulator-budget-value-wrapper">
+                                        <span class="boligkalkulator-budget-value" data-type="bank-repayment">1 819 <?php echo esc_html( $currency_symbol ); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -406,8 +413,13 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                         <span class="boligkalkulator-comparison-value" data-type="comparison-capital">12 500</span>
                                     </div>
                                     <div class="boligkalkulator-budget-item">
-                                        <span class="boligkalkulator-comparison-label"><?php esc_html_e( 'Renter og avdrag på eget banklån', 'boligkalkulator' ); ?></span>
-                                        <span class="boligkalkulator-comparison-value" data-type="comparison-renter">18 750 <span class="boligkalkulator-comparison-percent">90%</span></span>
+                                        <span class="boligkalkulator-comparison-label"><?php esc_html_e( 'Renter på eget banklån', 'boligkalkulator' ); ?></span>
+                                        <span class="boligkalkulator-comparison-value" data-type="comparison-renter">12 500</span>
+                                    </div>
+
+                                    <div class="boligkalkulator-budget-item">
+                                        <span class="boligkalkulator-comparison-label"><?php esc_html_e( 'Avdrag på eget banklån', 'boligkalkulator' ); ?></span>
+                                        <span class="boligkalkulator-comparison-value" data-type="comparison-repayment">6 250 <span class="boligkalkulator-comparison-percent">90%</span></span>
                                     </div>
                                 </div>
 
