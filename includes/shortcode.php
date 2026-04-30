@@ -43,6 +43,9 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
     $your_share_help      = isset( $settings['your_share_help'] ) ? $settings['your_share_help'] : '';
     $financing_help       = isset( $settings['financing_help'] ) ? $settings['financing_help'] : '';
 
+    // Tab 3 intro text (editable in admin)
+    $budget_intro_text    = isset( $settings['budget_intro_text'] ) ? $settings['budget_intro_text'] : 'Nedenfor har vi estimert månedlige utgifter for en bolig med Boligspleis og sammenlignet med ordinært kjøp av samme bolig og 10% oppspart egenkapital. Budsjettet er basert på oppgitte informasjon i steg 1 og 2 om kjøpesum, finansiering og ønsket eierandel. I tillegg har vi estimert renter og avdrag på lån og fellesgjeld, samt leiebeløp til OsloBolig og fellesutgifter for boligen';
+
     ob_start();
     ?>
     <div id="<?php echo esc_attr( $tab_id ); ?>" class="boligkalkulator-wrapper">
@@ -340,6 +343,10 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                 <div class="boligkalkulator-tab" data-tab="3">
                     <div class="boligkalkulator-tab-title">
                         <?php esc_html_e( 'Budsjett', 'boligkalkulator' ); ?>
+                    </div>
+
+                    <div class="boligkalkulator-budget-intro">
+                        <?php echo wpautop( esc_html( $budget_intro_text ) ); ?>
                     </div>
 
                     <div class="boligkalkulator-tab-content">
