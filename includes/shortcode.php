@@ -284,7 +284,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                     <span class="boligkalkulator-financing-percent" data-type="your-debt-percent">50%</span>
                                 </div>
                                 <div class="boligkalkulator-financing-row boligkalkulator-borettslag-only">
-                                    <span class="boligkalkulator-financing-label"><?php esc_html_e( 'Innskudd', 'boligkalkulator' ); ?></span>
+                                    <span class="boligkalkulator-financing-label"><?php esc_html_e( 'Innskudd - din andel', 'boligkalkulator' ); ?></span>
                                     <span class="boligkalkulator-financing-value" data-type="your-deposit">750 000 <?php echo esc_html( $currency_symbol ); ?></span>
                                     <span class="boligkalkulator-financing-percent" data-type="your-deposit-percent">50%</span>
                                 </div>
@@ -299,7 +299,15 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             <div class="boligkalkulator-financing-breakdown">
                                 <div class="boligkalkulator-financing-row">
                                     <span class="boligkalkulator-financing-label"><?php esc_html_e( 'Dine sparepenger (egenkapital)', 'boligkalkulator' ); ?></span>
-                                    <span class="boligkalkulator-financing-value" data-type="own-savings">200 000 <?php echo esc_html( $currency_symbol ); ?></span>
+                                    <div style="display:flex; align-items:center; gap:8px;">
+                                        <input
+                                            type="number"
+                                            class="boligkalkulator-input boligkalkulator-own-savings-input"
+                                            value="200000"
+                                            min="0"
+                                            step="1000" />
+                                        <span class="boligkalkulator-currency"><?php echo esc_html( $currency_symbol ); ?></span>
+                                    </div>
                                     <span class="boligkalkulator-financing-desc" data-type="own-savings-desc">
                                         <?php
                                         printf(
