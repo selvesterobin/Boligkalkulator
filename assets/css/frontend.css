@@ -235,6 +235,15 @@
     -webkit-column-break-inside: avoid;
 }
 
+/* Reduce spacing between total price input and the financing box below */
+.boligkalkulator-tab[data-tab="2"] .boligkalkulator-input-row {
+    margin-bottom: 20px; /* slightly tighter than default */
+}
+
+.boligkalkulator-tab[data-tab="2"] .boligkalkulator-input-row + .boligkalkulator-financing-breakdown {
+    margin-top: 6px;
+}
+
 .boligkalkulator-tab[data-tab="2"] .boligkalkulator-financing-breakdown {
     break-inside: avoid;
     -webkit-column-break-inside: avoid;
