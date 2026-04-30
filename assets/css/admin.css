@@ -234,6 +234,21 @@
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
+/* Ensure all admin textareas span full width of their form group */
+.boligkalkulator-form-group textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    box-sizing: border-box;
+    resize: vertical;
+    background: white;
+    color: var(--text-primary);
+}
+
 /* Form Actions */
 .boligkalkulator-form-actions {
     padding: 0 var(--spacing-xl) var(--spacing-xl);
