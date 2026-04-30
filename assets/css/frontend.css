@@ -1041,6 +1041,11 @@ select.boligkalkulator-input {
     color: #333;
 }
 
+/* Make the 'Fellesgjeld - din andel' value non-bold in 'Din eierandel' section */
+.boligkalkulator-your-share .boligkalkulator-financing-value[data-type="your-debt"] {
+    font-weight: 400;
+}
+
 /* Info Box */
 .boligkalkulator-info-box {
     display: flex !important;
