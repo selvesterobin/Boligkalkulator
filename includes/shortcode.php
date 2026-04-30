@@ -21,10 +21,11 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
     $currency_symbol         = isset( $settings['currency_symbol'] ) ? $settings['currency_symbol'] : 'kr';
 
     // Help texts
-    $oslobolig_rent_help  = isset( $settings['oslobolig_rent_help'] ) ? $settings['oslobolig_rent_help'] : '';
-    $common_costs_help    = isset( $settings['common_costs_help'] ) ? $settings['common_costs_help'] : '';
-    $capital_cost_help    = isset( $settings['capital_cost_help'] ) ? $settings['capital_cost_help'] : '';
-    $bank_interest_help   = isset( $settings['bank_interest_help'] ) ? $settings['bank_interest_help'] : '';
+    $oslobolig_rent_help   = isset( $settings['oslobolig_rent_help'] ) ? $settings['oslobolig_rent_help'] : '';
+    $common_costs_help     = isset( $settings['common_costs_help'] ) ? $settings['common_costs_help'] : '';
+    $capital_cost_help     = isset( $settings['capital_cost_help'] ) ? $settings['capital_cost_help'] : '';
+    $bank_interest_help    = isset( $settings['bank_interest_help'] ) ? $settings['bank_interest_help'] : '';
+    $bank_repayment_help   = isset( $settings['bank_repayment_help'] ) ? $settings['bank_repayment_help'] : '';
 
     // Tab 1 Help texts
     $annual_income_help   = isset( $settings['annual_income_help'] ) ? $settings['annual_income_help'] : '';

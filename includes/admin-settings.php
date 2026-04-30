@@ -410,6 +410,14 @@ function boligkalkulator_render_settings_page() {
                                       rows="2" 
                                       placeholder="<?php esc_attr_e( 'Hjelpetekst som vises ved hover på ? ikonet', 'boligkalkulator' ); ?>"><?php echo esc_textarea( isset( $settings['bank_interest_help'] ) ? $settings['bank_interest_help'] : '' ); ?></textarea>
                         </div>
+
+                        <div class="boligkalkulator-form-group">
+                            <label for="bank_repayment_help"><?php esc_html_e( 'Avdrag på banklån - hjelpetekst', 'boligkalkulator' ); ?></label>
+                            <textarea id="bank_repayment_help"
+                                      name="boligkalkulator_settings[bank_repayment_help]"
+                                      rows="2"
+                                      placeholder="<?php esc_attr_e( 'Hjelpetekst som vises ved hover på ? ikonet', 'boligkalkulator' ); ?>"><?php echo esc_textarea( isset( $settings['bank_repayment_help'] ) ? $settings['bank_repayment_help'] : '' ); ?></textarea>
+                        </div>
                     </div>
                 </div>
 
