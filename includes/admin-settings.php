@@ -191,6 +191,13 @@ function boligkalkulator_render_settings_page() {
                     </div>
                     <div class="boligkalkulator-card-content">
                         <div class="boligkalkulator-form-group">
+                            <label for="budget_intro_text"><?php esc_html_e( 'Tekst over budsjett (Tab 3)', 'boligkalkulator' ); ?></label>
+                            <textarea id="budget_intro_text"
+                                      name="boligkalkulator_settings[budget_intro_text]"
+                                      rows="4"
+                                      placeholder="Nedenfor har vi estimert månedlige utgifter..."><?php echo esc_textarea( isset( $settings['budget_intro_text'] ) ? $settings['budget_intro_text'] : 'Nedenfor har vi estimert månedlige utgifter for en bolig med Boligspleis og sammenlignet med ordinært kjøp av samme bolig og 10% oppspart egenkapital. Budsjettet er basert på oppgitte informasjon i steg 1 og 2 om kjøpesum, finansiering og ønsket eierandel. I tillegg har vi estimert renter og avdrag på lån og fellesgjeld, samt leiebeløp til OsloBolig og fellesutgifter for boligen' ); ?></textarea>
+                        </div>
+                        <div class="boligkalkulator-form-group">
                             <label for="oslobolig_rent_percentage"><?php esc_html_e( 'OsloBolig leieprosent (%)', 'boligkalkulator' ); ?></label>
                             <input type="number" 
                                    id="oslobolig_rent_percentage" 
@@ -409,6 +416,14 @@ function boligkalkulator_render_settings_page() {
                                       name="boligkalkulator_settings[bank_interest_help]" 
                                       rows="2" 
                                       placeholder="<?php esc_attr_e( 'Hjelpetekst som vises ved hover på ? ikonet', 'boligkalkulator' ); ?>"><?php echo esc_textarea( isset( $settings['bank_interest_help'] ) ? $settings['bank_interest_help'] : '' ); ?></textarea>
+                        </div>
+
+                        <div class="boligkalkulator-form-group">
+                            <label for="bank_repayment_help"><?php esc_html_e( 'Avdrag på banklån - hjelpetekst', 'boligkalkulator' ); ?></label>
+                            <textarea id="bank_repayment_help"
+                                      name="boligkalkulator_settings[bank_repayment_help]"
+                                      rows="2"
+                                      placeholder="<?php esc_attr_e( 'Hjelpetekst som vises ved hover på ? ikonet', 'boligkalkulator' ); ?>"><?php echo esc_textarea( isset( $settings['bank_repayment_help'] ) ? $settings['bank_repayment_help'] : '' ); ?></textarea>
                         </div>
                     </div>
                 </div>

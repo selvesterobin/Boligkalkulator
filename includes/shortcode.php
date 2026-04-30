@@ -21,10 +21,11 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
     $currency_symbol         = isset( $settings['currency_symbol'] ) ? $settings['currency_symbol'] : 'kr';
 
     // Help texts
-    $oslobolig_rent_help  = isset( $settings['oslobolig_rent_help'] ) ? $settings['oslobolig_rent_help'] : '';
-    $common_costs_help    = isset( $settings['common_costs_help'] ) ? $settings['common_costs_help'] : '';
-    $capital_cost_help    = isset( $settings['capital_cost_help'] ) ? $settings['capital_cost_help'] : '';
-    $bank_interest_help   = isset( $settings['bank_interest_help'] ) ? $settings['bank_interest_help'] : '';
+    $oslobolig_rent_help   = isset( $settings['oslobolig_rent_help'] ) ? $settings['oslobolig_rent_help'] : '';
+    $common_costs_help     = isset( $settings['common_costs_help'] ) ? $settings['common_costs_help'] : '';
+    $capital_cost_help     = isset( $settings['capital_cost_help'] ) ? $settings['capital_cost_help'] : '';
+    $bank_interest_help    = isset( $settings['bank_interest_help'] ) ? $settings['bank_interest_help'] : '';
+    $bank_repayment_help   = isset( $settings['bank_repayment_help'] ) ? $settings['bank_repayment_help'] : '';
 
     // Tab 1 Help texts
     $annual_income_help   = isset( $settings['annual_income_help'] ) ? $settings['annual_income_help'] : '';
@@ -41,6 +42,9 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
     $total_price_help     = isset( $settings['total_price_help'] ) ? $settings['total_price_help'] : '';
     $your_share_help      = isset( $settings['your_share_help'] ) ? $settings['your_share_help'] : '';
     $financing_help       = isset( $settings['financing_help'] ) ? $settings['financing_help'] : '';
+
+    // Tab 3 intro text (editable in admin)
+    $budget_intro_text    = isset( $settings['budget_intro_text'] ) ? $settings['budget_intro_text'] : 'Nedenfor har vi estimert månedlige utgifter for en bolig med Boligspleis og sammenlignet med ordinært kjøp av samme bolig og 10% oppspart egenkapital. Budsjettet er basert på oppgitte informasjon i steg 1 og 2 om kjøpesum, finansiering og ønsket eierandel. I tillegg har vi estimert renter og avdrag på lån og fellesgjeld, samt leiebeløp til OsloBolig og fellesutgifter for boligen';
 
     ob_start();
     ?>
@@ -94,7 +98,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
 
                             <div class="boligkalkulator-input-group">
                                 <label class="boligkalkulator-label">
-                                    <?php esc_html_e( 'Sparepenger', 'boligkalkulator' ); ?>
+                                    <?php esc_html_e( 'Sparepenger (egenkapital)', 'boligkalkulator' ); ?>
                                     <span class="boligkalkulator-help-icon" data-help="savings_help" data-content="<?php echo esc_attr( $savings_help ); ?>">?</span>
                                 </label>
                                 <div class="boligkalkulator-input-wrapper">
@@ -165,7 +169,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                         </div>
 
                         <div class="boligkalkulator-result-box boligkalkulator-buying-power">
-                            <span class="boligkalkulator-result-label"><?php esc_html_e( 'Du kan kjøpe for', 'boligkalkulator' ); ?></span>
+                            <span class="boligkalkulator-result-label"><?php esc_html_e( 'Vi tror du kan kjøpe for', 'boligkalkulator' ); ?></span>
                             <span class="boligkalkulator-result-value" data-type="buying-power">3 800 000 <?php echo esc_html( $currency_symbol ); ?></span>
                         </div>
 
@@ -214,7 +218,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                     <span class="boligkalkulator-help-icon" data-help="ownership_form_help" data-content="<?php echo esc_attr( $ownership_form_help ); ?>">?</span>
                                 </label>
                                 <select class="boligkalkulator-input boligkalkulator-ownership-form">
-                                    <option value="borettslag"><?php esc_html_e( 'Borettslag', 'boligkalkulator' ); ?></option>
+                                    <option value="borettslag"><?php esc_html_e( 'Borettslag med fellesgjeld 50%', 'boligkalkulator' ); ?></option>
                                     <option value="selveier"><?php esc_html_e( 'Selveier', 'boligkalkulator' ); ?></option>
                                 </select>
                             </div>
@@ -283,7 +287,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                     <span class="boligkalkulator-financing-percent" data-type="your-debt-percent">50%</span>
                                 </div>
                                 <div class="boligkalkulator-financing-row boligkalkulator-borettslag-only">
-                                    <span class="boligkalkulator-financing-label"><?php esc_html_e( 'Innskudd', 'boligkalkulator' ); ?></span>
+                                    <span class="boligkalkulator-financing-label"><?php esc_html_e( 'Innskudd - din andel', 'boligkalkulator' ); ?></span>
                                     <span class="boligkalkulator-financing-value" data-type="your-deposit">750 000 <?php echo esc_html( $currency_symbol ); ?></span>
                                     <span class="boligkalkulator-financing-percent" data-type="your-deposit-percent">50%</span>
                                 </div>
@@ -297,8 +301,16 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             </h4>
                             <div class="boligkalkulator-financing-breakdown">
                                 <div class="boligkalkulator-financing-row">
-                                    <span class="boligkalkulator-financing-label"><?php esc_html_e( 'Dine sparepenger', 'boligkalkulator' ); ?></span>
-                                    <span class="boligkalkulator-financing-value" data-type="own-savings">200 000 <?php echo esc_html( $currency_symbol ); ?></span>
+                                    <span class="boligkalkulator-financing-label"><?php esc_html_e( 'Dine sparepenger (egenkapital)', 'boligkalkulator' ); ?></span>
+                                    <div style="display:flex; align-items:center; gap:8px;">
+                                        <input
+                                            type="number"
+                                            class="boligkalkulator-input boligkalkulator-own-savings-input"
+                                            value="200000"
+                                            min="0"
+                                            step="1000" />
+                                        <span class="boligkalkulator-currency"><?php echo esc_html( $currency_symbol ); ?></span>
+                                    </div>
                                     <span class="boligkalkulator-financing-desc" data-type="own-savings-desc">
                                         <?php
                                         printf(
@@ -333,9 +345,14 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                         <?php esc_html_e( 'Budsjett', 'boligkalkulator' ); ?>
                     </div>
 
+                    <div class="boligkalkulator-budget-intro">
+                        <?php echo wpautop( esc_html( $budget_intro_text ) ); ?>
+                    </div>
+                    <hr class="boligkalkulator-budget-divider" />
+
                     <div class="boligkalkulator-tab-content">
                         <div class="boligkalkulator-budget-section">
-                            <h4><?php esc_html_e( 'Estimerte månedlige utgifter', 'boligkalkulator' ); ?></h4>
+                            <h4><?php esc_html_e( 'Boligspleis - estimert månedlig utgifter', 'boligkalkulator' ); ?></h4>
 
                             <div class="boligkalkulator-budget-items">
                                 <div class="boligkalkulator-budget-item boligkalkulator-budget-item-highlight">
@@ -369,10 +386,18 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                 </div>
 
                                 <div class="boligkalkulator-budget-item">
-                                    <span class="boligkalkulator-budget-label"><?php esc_html_e( 'Renter og avdrag på banklån', 'boligkalkulator' ); ?></span>
+                                    <span class="boligkalkulator-budget-label"><?php esc_html_e( 'Renter på banklån', 'boligkalkulator' ); ?></span>
                                     <div class="boligkalkulator-budget-value-wrapper">
-                                        <span class="boligkalkulator-budget-value" data-type="bank-interest">3 819 <?php echo esc_html( $currency_symbol ); ?></span>
+                                        <span class="boligkalkulator-budget-value" data-type="bank-interest">2 000 <?php echo esc_html( $currency_symbol ); ?></span>
                                         <span class="boligkalkulator-help-icon" data-help="bank_interest_help" data-content="<?php echo esc_attr( $bank_interest_help ); ?>">?</span>
+                                    </div>
+                                </div>
+
+                                <div class="boligkalkulator-budget-item">
+                                    <span class="boligkalkulator-budget-label"><?php esc_html_e( 'Avdrag på banklån (egen sparing)', 'boligkalkulator' ); ?></span>
+                                    <div class="boligkalkulator-budget-value-wrapper">
+                                        <span class="boligkalkulator-budget-value" data-type="bank-repayment">1 819 <?php echo esc_html( $currency_symbol ); ?></span>
+                                        <span class="boligkalkulator-help-icon" data-help="bank_repayment_help" data-content="<?php echo esc_attr( $bank_repayment_help ); ?>">?</span>
                                     </div>
                                 </div>
                             </div>
@@ -383,7 +408,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             </div>
 
                             <div class="boligkalkulator-comparison-section">
-                                <h4><?php esc_html_e( 'Sammenligning mot 100% kjøp og 90% banklån', 'boligkalkulator' ); ?></h4>
+                                <h4><?php esc_html_e( 'Ordinært kjøp med 10% egenkapital og banklån', 'boligkalkulator' ); ?></h4>
 
                                 <div class="boligkalkulator-budget-items">
                                     <div class="boligkalkulator-budget-item boligkalkulator-budget-item-highlight">
@@ -406,8 +431,13 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                         <span class="boligkalkulator-comparison-value" data-type="comparison-capital">12 500</span>
                                     </div>
                                     <div class="boligkalkulator-budget-item">
-                                        <span class="boligkalkulator-comparison-label"><?php esc_html_e( 'Renter og avdrag på eget banklån', 'boligkalkulator' ); ?></span>
-                                        <span class="boligkalkulator-comparison-value" data-type="comparison-renter">18 750 <span class="boligkalkulator-comparison-percent">90%</span></span>
+                                        <span class="boligkalkulator-comparison-label"><?php esc_html_e( 'Renter på eget banklån', 'boligkalkulator' ); ?></span>
+                                        <span class="boligkalkulator-comparison-value" data-type="comparison-renter">12 500</span>
+                                    </div>
+
+                                    <div class="boligkalkulator-budget-item">
+                                        <span class="boligkalkulator-comparison-label"><?php esc_html_e( 'Avdrag på eget banklån', 'boligkalkulator' ); ?></span>
+                                        <span class="boligkalkulator-comparison-value" data-type="comparison-repayment">6 250 <span class="boligkalkulator-comparison-percent">90%</span></span>
                                     </div>
                                 </div>
 
