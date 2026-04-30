@@ -1125,6 +1125,11 @@ select.boligkalkulator-input {
     line-height: 1.5;
 }
 
+/* Ensure paragraphs inside the intro don't add extra margins */
+.boligkalkulator-budget-intro p {
+    margin: 0;
+}
+
 .boligkalkulator-budget-divider {
     border: none;
     height: 1px;
