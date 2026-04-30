@@ -95,7 +95,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
 
                             <div class="boligkalkulator-input-group">
                                 <label class="boligkalkulator-label">
-                                    <?php esc_html_e( 'Sparepenger', 'boligkalkulator' ); ?>
+                                    <?php esc_html_e( 'Sparepenger (egenkapital)', 'boligkalkulator' ); ?>
                                     <span class="boligkalkulator-help-icon" data-help="savings_help" data-content="<?php echo esc_attr( $savings_help ); ?>">?</span>
                                 </label>
                                 <div class="boligkalkulator-input-wrapper">
@@ -298,7 +298,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             </h4>
                             <div class="boligkalkulator-financing-breakdown">
                                 <div class="boligkalkulator-financing-row">
-                                    <span class="boligkalkulator-financing-label"><?php esc_html_e( 'Dine sparepenger', 'boligkalkulator' ); ?></span>
+                                    <span class="boligkalkulator-financing-label"><?php esc_html_e( 'Dine sparepenger (egenkapital)', 'boligkalkulator' ); ?></span>
                                     <span class="boligkalkulator-financing-value" data-type="own-savings">200 000 <?php echo esc_html( $currency_symbol ); ?></span>
                                     <span class="boligkalkulator-financing-desc" data-type="own-savings-desc">
                                         <?php
