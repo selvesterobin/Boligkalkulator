@@ -200,6 +200,36 @@
 
             calculateFinancing(calculator);
         }
+
+        // Make 'Dine sparepenger' editable in Tab 2 and sync with Tab 1 savings input
+        const ownSavingsInput = calculator.querySelector('.boligkalkulator-own-savings-input');
+        const mainSavingsInput = calculator.querySelector('.boligkalkulator-savings');
+
+        if (ownSavingsInput) {
+            // initialize value from main savings if present
+            if (mainSavingsInput) {
+                ownSavingsInput.value = mainSavingsInput.value || ownSavingsInput.value;
+            }
+
+            ownSavingsInput.addEventListener('input', function() {
+                const v = parseFloat(this.value) || 0;
+                if (mainSavingsInput) mainSavingsInput.value = v;
+                calculateBuyingPower(calculator);
+                calculateFinancing(calculator);
+            });
+        }
+
+        // keep Tab2 own-savings input in sync when user edits savings in Tab1
+        if (mainSavingsInput) {
+            mainSavingsInput.addEventListener('input', function() {
+                const v = parseFloat(this.value) || 0;
+                if (ownSavingsInput) {
+                    ownSavingsInput.value = v;
+                }
+                calculateBuyingPower(calculator);
+                calculateFinancing(calculator);
+            });
+        }
     }
 
     function calculateFinancing(calculator) {
