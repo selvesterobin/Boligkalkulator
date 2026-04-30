@@ -1119,7 +1119,7 @@ select.boligkalkulator-input {
 
 /* Budget intro and divider */
 .boligkalkulator-budget-intro {
-    margin: 0 0 12px 0;
+    margin: 16px 0;
     color: #333;
     font-size: 15px;
     line-height: 1.5;
@@ -1129,7 +1129,7 @@ select.boligkalkulator-input {
     border: none;
     height: 1px;
     background: #e9e9e9;
-    margin: 12px 0 18px 0;
+    margin: 16px 0;
     width: 100%;
 }
 
