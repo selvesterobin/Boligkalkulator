@@ -381,6 +381,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                                     <span class="boligkalkulator-budget-label"><?php esc_html_e( 'Avdrag på banklån (egen sparing)', 'boligkalkulator' ); ?></span>
                                     <div class="boligkalkulator-budget-value-wrapper">
                                         <span class="boligkalkulator-budget-value" data-type="bank-repayment">1 819 <?php echo esc_html( $currency_symbol ); ?></span>
+                                        <span class="boligkalkulator-help-icon" data-help="bank_repayment_help" data-content="<?php echo esc_attr( $bank_repayment_help ); ?>">?</span>
                                     </div>
                                 </div>
                             </div>
