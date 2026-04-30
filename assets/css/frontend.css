@@ -1138,6 +1138,11 @@ select.boligkalkulator-input {
     width: 100%;
 }
 
+/* Remove extra margin under the Tab 3 heading so spacing above the intro matches below */
+.boligkalkulator-tab[data-tab="3"] .boligkalkulator-tab-title {
+    margin-bottom: 0 !important;
+}
+
 /* Tab Navigation Buttons */
 .boligkalkulator-tab-navigation {
     display: flex;
