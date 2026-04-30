@@ -348,6 +348,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                     <div class="boligkalkulator-budget-intro">
                         <?php echo wpautop( esc_html( $budget_intro_text ) ); ?>
                     </div>
+                    <hr class="boligkalkulator-budget-divider" />
 
                     <div class="boligkalkulator-tab-content">
                         <div class="boligkalkulator-budget-section">

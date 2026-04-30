@@ -34,7 +34,7 @@
     font-weight: 400;
     background: transparent;
     padding: 40px 20px;
-    font-size: 14px !important;
+    font-size: 15px !important;
     border-radius: 12px;
     margin: 20px 0;
 }
@@ -344,7 +344,7 @@
 .boligkalkulator-input {
     flex: 1 !important;
     padding: 12px 12px 12px 12px !important;
-    font-size: 14px !important;
+    font-size: 15px !important;
     border: 2px solid #e0e0e0 !important;
     border-radius: 8px !important;
     transition: all 0.3s ease !important;
@@ -1036,7 +1036,7 @@ select.boligkalkulator-input {
 }
 
 .boligkalkulator-financing-value {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     color: #333;
 }
@@ -1106,15 +1106,31 @@ select.boligkalkulator-input {
 }
 
 .boligkalkulator-budget-label {
-    font-size: 14px;
+    font-size: 15px;
     color: #666;
     font-weight: 500;
 }
 
 .boligkalkulator-budget-value {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     color: #333;
+}
+
+/* Budget intro and divider */
+.boligkalkulator-budget-intro {
+    margin: 0 0 12px 0;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.boligkalkulator-budget-divider {
+    border: none;
+    height: 1px;
+    background: #e9e9e9;
+    margin: 12px 0 18px 0;
+    width: 100%;
 }
 
 /* Tab Navigation Buttons */
