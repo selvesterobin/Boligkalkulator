@@ -400,7 +400,7 @@ function boligkalkulator_render_shortcode( $atts = array() ) {
                             </div>
 
                             <div class="boligkalkulator-comparison-section">
-                                <h4><?php esc_html_e( 'Sammenligning mot 100% kjøp og 90% banklån', 'boligkalkulator' ); ?></h4>
+                                <h4><?php esc_html_e( 'Ordinært kjøp med 10% egenkapital og banklån', 'boligkalkulator' ); ?></h4>
 
                                 <div class="boligkalkulator-budget-items">
                                     <div class="boligkalkulator-budget-item boligkalkulator-budget-item-highlight">
