@@ -205,7 +205,7 @@ function boligkalkulator_render_settings_page() {
                                    value="<?php echo esc_attr( isset( $settings['oslobolig_rent_percentage'] ) ? $settings['oslobolig_rent_percentage'] : 4.5 ); ?>" 
                                    min="0" 
                                    step="0.1" />
-                            <span class="boligkalkulator-help-text"><?php esc_html_e( 'Årlig prosentandel av kjøpesum (f.eks. 4.5 = 4.5%)', 'boligkalkulator' ); ?></span>
+                            <span class="boligkalkulator-help-text"><?php esc_html_e( 'Årlig prosent av OsloBoligs andel av kjøpesummen (f.eks. 4.5 = 4.5%)', 'boligkalkulator' ); ?></span>
                         </div>
 
                         <div class="boligkalkulator-form-group">

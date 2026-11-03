@@ -359,8 +359,9 @@
 
         const yourPrice = (totalPrice * ownershipPercentage) / 100;
 
-        // Monthly rent to OsloBolig: annual percentage of your share / 12
-        const monthlyRent = yourPrice * (osloboligRentPct / 100) / 12;
+        // Monthly rent to OsloBolig: annual percentage of OsloBolig's share / 12
+        const osloboligShare = totalPrice - yourPrice;
+        const monthlyRent    = osloboligShare * (osloboligRentPct / 100) / 12;
 
         // Drift costs: estimated sqm * drift rate * ownership share + broadband
         const monthlyDriftCosts = estimatedPricePerKvm > 0
