@@ -3,7 +3,7 @@
  * Plugin Name: Boligkalkulator
  * Plugin URI: https://oslobolig.no
  * Description: En profesjonell boligkalkulator for Oslo Bolig med backend-innstillinger og embed-funksjonalitet
- * Version: 1.4.1
+ * Version: 1.5.0
  * Author: Robin Andersen
  * Author URI: https://robin.as
  * License: GPL v2 or later
@@ -11,6 +11,7 @@
  * Domain Path: /languages
  * GitHub Plugin URI: selvesterobin/Boligkalkulator
  * Primary Branch: master
+ * Update URI: https://github.com/selvesterobin/Boligkalkulator
  * Requires PHP: 7.4
  * Requires at least: 5.0
  */
@@ -20,9 +21,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define plugin constants
-define( 'BOLIGKALKULATOR_VERSION', '1.4.1' );
+define( 'BOLIGKALKULATOR_VERSION', '1.5.0' );
 define( 'BOLIGKALKULATOR_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BOLIGKALKULATOR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
+// Self-update from GitHub Releases (admin/cron only)
+require_once BOLIGKALKULATOR_PLUGIN_DIR . 'includes/class-github-updater.php';
+if ( is_admin() || ( defined( 'DOING_CRON' ) && DOING_CRON ) ) {
+    new Boligkalkulator_GitHub_Updater( array(
+        'slug'       => plugin_basename( __FILE__ ),
+        'name'       => 'Boligkalkulator',
+        'version'    => BOLIGKALKULATOR_VERSION,
+        'repo'       => 'selvesterobin/Boligkalkulator',
+        'asset_file' => 'boligkalkulator.zip',
+    ) );
+}
 
 // Include core files
 require_once BOLIGKALKULATOR_PLUGIN_DIR . 'includes/class-boligkalkulator.php';
